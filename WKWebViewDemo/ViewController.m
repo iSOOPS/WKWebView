@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SWKWebViewController.h"
-@interface ViewController ()
+@interface ViewController ()<SWKWebViewControllerDelegate>
 - (IBAction)toWKWebView:(UIButton *)sender;
 
 @end
@@ -36,8 +36,23 @@
 */
 
 - (IBAction)toWKWebView:(UIButton *)sender {
+    NSMutableArray *interfaces = [[NSMutableArray alloc]init];
+    [interfaces addObject:@"one"];
+    [interfaces addObject:@"two"];
+    
     SWKWebViewController *controller = [[SWKWebViewController alloc]init];
     controller.url_string = @"http://www.qq.com";
+    controller.delegate = self;
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)htmlRequrieToIOS:(NSString *)keyString andData:(id)data andBaseInterfaces:(NSMutableArray<NSString *> *)interfaces
+{
+    if ([keyString isEqualToString:@"one"]) {
+        
+    }
+    else if ([keyString isEqualToString:@"two"]){
+        
+    }
 }
 @end

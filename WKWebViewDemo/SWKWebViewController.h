@@ -10,7 +10,7 @@
 
 @protocol SWKWebViewControllerDelegate <NSObject>
 
-- (void)htmlRequrieToIOS:(NSString*)keyString andData:(id)data;
+- (void)htmlRequrieToIOS:(NSString*)keyString andData:(id)data andBaseInterfaces:(NSMutableArray<NSString*>*)interfaces;
 
 @end
 

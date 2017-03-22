@@ -138,9 +138,9 @@
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     for (NSString *interface in self.jsInterfaces) {
         //这里可以通过name处理多组交互
-        if ([message.name isEqualToString:interface] && [self.delegate respondsToSelector:@selector(htmlRequrieToIOS:andData:)]) {
+        if ([message.name isEqualToString:interface] && [self.delegate respondsToSelector:@selector(htmlRequrieToIOS:andData:andBaseInterfaces:)]) {
             //body只支持NSNumber, NSString, NSDate, NSArray,NSDictionary 和 NSNull类型
-            [self.delegate htmlRequrieToIOS:message.name andData:message.body];
+            [self.delegate htmlRequrieToIOS:message.name andData:message.body andBaseInterfaces:self.jsInterfaces];
         }
     }
 }
