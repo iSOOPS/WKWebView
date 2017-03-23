@@ -59,7 +59,7 @@
 - (IBAction)tooutInoicView:(UIButton *)sender {
     OutInoic2ViewController *aaa = [[OutInoic2ViewController alloc]init];
 //    aaa userAgent = @"http://192.168.1.165:8080/cordova/";
-//    [aaa setBaseUserAgent:@"http://192.168.1.165:8080/cordova/"];
+    [aaa setStartPage:@"http://192.168.1.226/angular/"];
     [self.navigationController pushViewController:aaa animated:YES];
     
 }

@@ -19,7 +19,7 @@
     self = [super init];
     if (self) {
 //        self.startPage = @"http://192.168.1.165:8080/ios/";
-        self.startPage = @"http://192.168.1.226/angular/";
+//        self.startPage = @"http://192.168.1.226/angular/";
     }
     return self;
 }
