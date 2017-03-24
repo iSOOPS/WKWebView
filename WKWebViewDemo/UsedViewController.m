@@ -18,7 +18,6 @@
     self.url_string = @"http://www.taobao.com";
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

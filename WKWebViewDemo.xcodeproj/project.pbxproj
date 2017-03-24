@@ -16,13 +16,13 @@
 		7E8D7C1C1E80F02E0059A0C6 /* WKWebViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D7C1B1E80F02E0059A0C6 /* WKWebViewDemoUITests.m */; };
 		7E8D7C2C1E80F06C0059A0C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D7C2A1E80F06C0059A0C6 /* ViewController.m */; };
 		7E8D7C2D1E80F06C0059A0C6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8D7C2B1E80F06C0059A0C6 /* ViewController.xib */; };
-		7E8D7C301E80F1FD0059A0C6 /* SWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D7C2F1E80F1FD0059A0C6 /* SWKWebView.m */; };
-		7E8D7C341E80F2160059A0C6 /* SWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D7C321E80F2160059A0C6 /* SWKWebViewController.m */; };
-		7E8D7C351E80F2160059A0C6 /* SWKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8D7C331E80F2160059A0C6 /* SWKWebViewController.xib */; };
 		7E8D7C3B1E80F4EE0059A0C6 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D7C381E80F4EE0059A0C6 /* NJKWebViewProgress.m */; };
 		7E8D7C3C1E80F4EE0059A0C6 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D7C3A1E80F4EE0059A0C6 /* NJKWebViewProgressView.m */; };
 		7EC1C2E21E84C1B400468EE3 /* UsedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1C2E01E84C1B400468EE3 /* UsedViewController.m */; };
 		7EC1C2E31E84C1B400468EE3 /* UsedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC1C2E11E84C1B400468EE3 /* UsedViewController.xib */; };
+		7EC1C2EC1E84C75300468EE3 /* SWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1C2E81E84C75300468EE3 /* SWKWebView.m */; };
+		7EC1C2ED1E84C75300468EE3 /* SWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1C2EA1E84C75300468EE3 /* SWKWebViewController.m */; };
+		7EC1C2EE1E84C75300468EE3 /* SWKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC1C2EB1E84C75300468EE3 /* SWKWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +60,6 @@
 		7E8D7C291E80F06C0059A0C6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7E8D7C2A1E80F06C0059A0C6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7E8D7C2B1E80F06C0059A0C6 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		7E8D7C2E1E80F1FD0059A0C6 /* SWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWKWebView.h; sourceTree = "<group>"; };
-		7E8D7C2F1E80F1FD0059A0C6 /* SWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKWebView.m; sourceTree = "<group>"; };
-		7E8D7C311E80F2160059A0C6 /* SWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWKWebViewController.h; sourceTree = "<group>"; };
-		7E8D7C321E80F2160059A0C6 /* SWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKWebViewController.m; sourceTree = "<group>"; };
-		7E8D7C331E80F2160059A0C6 /* SWKWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWKWebViewController.xib; sourceTree = "<group>"; };
 		7E8D7C371E80F4EE0059A0C6 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
 		7E8D7C381E80F4EE0059A0C6 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		7E8D7C391E80F4EE0059A0C6 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
@@ -72,6 +67,11 @@
 		7EC1C2DF1E84C1B400468EE3 /* UsedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsedViewController.h; sourceTree = "<group>"; };
 		7EC1C2E01E84C1B400468EE3 /* UsedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsedViewController.m; sourceTree = "<group>"; };
 		7EC1C2E11E84C1B400468EE3 /* UsedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsedViewController.xib; sourceTree = "<group>"; };
+		7EC1C2E71E84C75300468EE3 /* SWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWKWebView.h; sourceTree = "<group>"; };
+		7EC1C2E81E84C75300468EE3 /* SWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKWebView.m; sourceTree = "<group>"; };
+		7EC1C2E91E84C75300468EE3 /* SWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWKWebViewController.h; sourceTree = "<group>"; };
+		7EC1C2EA1E84C75300468EE3 /* SWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWKWebViewController.m; sourceTree = "<group>"; };
+		7EC1C2EB1E84C75300468EE3 /* SWKWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWKWebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +122,7 @@
 		7E8D7BF21E80F02E0059A0C6 /* WKWebViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7EC1C2E61E84C75300468EE3 /* SWKWebView */,
 				7E8D7BF61E80F02E0059A0C6 /* AppDelegate.h */,
 				7E8D7BF71E80F02E0059A0C6 /* AppDelegate.m */,
 				7E8D7C291E80F06C0059A0C6 /* ViewController.h */,
@@ -130,11 +131,6 @@
 				7EC1C2DF1E84C1B400468EE3 /* UsedViewController.h */,
 				7EC1C2E01E84C1B400468EE3 /* UsedViewController.m */,
 				7EC1C2E11E84C1B400468EE3 /* UsedViewController.xib */,
-				7E8D7C311E80F2160059A0C6 /* SWKWebViewController.h */,
-				7E8D7C321E80F2160059A0C6 /* SWKWebViewController.m */,
-				7E8D7C331E80F2160059A0C6 /* SWKWebViewController.xib */,
-				7E8D7C2E1E80F1FD0059A0C6 /* SWKWebView.h */,
-				7E8D7C2F1E80F1FD0059A0C6 /* SWKWebView.m */,
 				7E8D7C361E80F4EE0059A0C6 /* WebProgress */,
 				7E8D7C021E80F02E0059A0C6 /* Assets.xcassets */,
 				7E8D7C041E80F02E0059A0C6 /* LaunchScreen.storyboard */,
@@ -180,6 +176,18 @@
 				7E8D7C3A1E80F4EE0059A0C6 /* NJKWebViewProgressView.m */,
 			);
 			path = WebProgress;
+			sourceTree = "<group>";
+		};
+		7EC1C2E61E84C75300468EE3 /* SWKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				7EC1C2E71E84C75300468EE3 /* SWKWebView.h */,
+				7EC1C2E81E84C75300468EE3 /* SWKWebView.m */,
+				7EC1C2E91E84C75300468EE3 /* SWKWebViewController.h */,
+				7EC1C2EA1E84C75300468EE3 /* SWKWebViewController.m */,
+				7EC1C2EB1E84C75300468EE3 /* SWKWebViewController.xib */,
+			);
+			path = SWKWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +299,9 @@
 			files = (
 				7E8D7C061E80F02E0059A0C6 /* LaunchScreen.storyboard in Resources */,
 				7E8D7C2D1E80F06C0059A0C6 /* ViewController.xib in Resources */,
+				7EC1C2EE1E84C75300468EE3 /* SWKWebViewController.xib in Resources */,
 				7EC1C2E31E84C1B400468EE3 /* UsedViewController.xib in Resources */,
 				7E8D7C031E80F02E0059A0C6 /* Assets.xcassets in Resources */,
-				7E8D7C351E80F2160059A0C6 /* SWKWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,13 +328,13 @@
 			files = (
 				7E8D7BF81E80F02E0059A0C6 /* AppDelegate.m in Sources */,
 				7E8D7C011E80F02E0059A0C6 /* WKWebViewDemo.xcdatamodeld in Sources */,
-				7E8D7C301E80F1FD0059A0C6 /* SWKWebView.m in Sources */,
 				7E8D7C2C1E80F06C0059A0C6 /* ViewController.m in Sources */,
 				7E8D7BF51E80F02E0059A0C6 /* main.m in Sources */,
-				7E8D7C341E80F2160059A0C6 /* SWKWebViewController.m in Sources */,
 				7E8D7C3B1E80F4EE0059A0C6 /* NJKWebViewProgress.m in Sources */,
+				7EC1C2EC1E84C75300468EE3 /* SWKWebView.m in Sources */,
 				7E8D7C3C1E80F4EE0059A0C6 /* NJKWebViewProgressView.m in Sources */,
 				7EC1C2E21E84C1B400468EE3 /* UsedViewController.m in Sources */,
+				7EC1C2ED1E84C75300468EE3 /* SWKWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
