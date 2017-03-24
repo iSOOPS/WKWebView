@@ -16,10 +16,26 @@
 
 @interface SWKWebViewController : UIViewController
 
+@property(nonatomic ,assign)id<SWKWebViewControllerDelegate> delegate;
+
+/**
+ 加载路径
+ */
 @property(nonatomic ,strong)NSString* url_string;
 
+/**
+ js回调接口名称
+ */
 @property(nonatomic ,strong)NSMutableArray<NSString*>* jsInterfaces;
 
-@property(nonatomic ,assign)id<SWKWebViewControllerDelegate> delegate;
+/**
+ 是否关闭进度条
+ */
+@property(nonatomic )BOOL closeProgressBar;
+
+/**
+ 是否关闭2级按钮
+ */
+@property(nonatomic )BOOL closeMutableButton;
 
 @end

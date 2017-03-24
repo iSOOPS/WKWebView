@@ -45,7 +45,7 @@
     [interfaces addObject:@"two"];
     
     SWKWebViewController *controller = [[SWKWebViewController alloc]init];
-    controller.url_string = @"http://www.qq.com";
+    controller.url_string = @"http://192.168.1.226/dist/";
     controller.delegate = self;
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -59,7 +59,8 @@
 - (IBAction)tooutInoicView:(UIButton *)sender {
     OutInoic2ViewController *aaa = [[OutInoic2ViewController alloc]init];
 //    aaa userAgent = @"http://192.168.1.165:8080/cordova/";
-    [aaa setStartPage:@"http://192.168.1.226/angular/"];
+//    [aaa setStartPage:@"http://192.168.1.226/angular/"];
+    [aaa setStartPage:@"http://192.168.1.226/dist/"];
     [self.navigationController pushViewController:aaa animated:YES];
     
 }
