@@ -8,16 +8,13 @@
 
 #import "SWKWebView.h"
 
-#define ___screenWidth ([UIScreen mainScreen].bounds.size.width)
-#define ___screenHeight ([UIScreen mainScreen].bounds.size.height)
-
 
 @implementation SWKWebView
 
 
 - (instancetype)init
 {
-    return [self initWithFrame:CGRectMake(0, 0, ___screenWidth, ___screenHeight)];
+    return [self initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
 }
 - (instancetype)initWithFrame:(CGRect)frame
 {

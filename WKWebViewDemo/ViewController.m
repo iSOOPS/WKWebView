@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "SWKWebViewController.h"
+
+#import "UsedViewController.h"
 @interface ViewController ()<SWKWebViewControllerDelegate>
 - (IBAction)toWKWebView:(UIButton *)sender;
 
@@ -36,13 +38,15 @@
 */
 
 - (IBAction)toWKWebView:(UIButton *)sender {
-    NSMutableArray *interfaces = [[NSMutableArray alloc]init];
-    [interfaces addObject:@"one"];
-    [interfaces addObject:@"two"];
-    
-    SWKWebViewController *controller = [[SWKWebViewController alloc]init];
-    controller.url_string = @"http://www.qq.com";
-    controller.delegate = self;
+//    NSMutableArray *interfaces = [[NSMutableArray alloc]init];
+//    [interfaces addObject:@"one"];
+//    [interfaces addObject:@"two"];
+//    
+//    SWKWebViewController *controller = [[SWKWebViewController alloc]init];
+//    controller.url_string = @"http://www.qq.com";
+//    controller.delegate = self;
+    UsedViewController *controller = [[UsedViewController alloc]init];
+//    controller.url_string = @"http://www.isoops.com";
     [self.navigationController pushViewController:controller animated:YES];
 }
 

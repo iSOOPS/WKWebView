@@ -7,13 +7,13 @@
 //
 
 #import "SWKWebViewController.h"
-#import "SWKWebView.h"
+
 
 #import "NJKWebViewProgress.h"
 #import "NJKWebViewProgressView.h"
 
 @interface SWKWebViewController ()<SWKWebViewDelegate,WKScriptMessageHandler>
-@property (nonatomic,strong)SWKWebView *webView;
+
 @property(nonatomic ,strong)NJKWebViewProgressView *progressView;
 
 @end
@@ -29,12 +29,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar addSubview:self.progressView];
+    if (self.progressView!=nil) {
+        [self.navigationController.navigationBar addSubview:self.progressView];
+    }
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.progressView removeFromSuperview];
+    if (self.progressView!=nil) {
+        [self.progressView removeFromSuperview];
+        self.progressView = nil;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -69,6 +74,9 @@
 }
 - (void)initLoadingView
 {
+    if (self.closeProgressBar == YES) {
+        return;
+    }
     CGFloat progressBarHeight = 2.f;
     CGRect navigationBarBounds = self.navigationController.navigationBar.bounds;
     CGRect barFrame = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight);
@@ -78,24 +86,27 @@
 }
 - (void)initNavgationItem
 {
-    //    /自定义一个按钮
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 98, 40)];
+    //将leftItem设置为自定义按钮
+    UIBarButtonItem  *leftItem =[[UIBarButtonItem alloc]initWithCustomView: view];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    //自定义一个按钮
     UIButton  *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setTitle:@"返回" forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(setDefaultLeftBack:) forControlEvents:UIControlEventTouchUpInside];
     leftBtn.frame = CGRectMake(0, 0, 44, 44);
     [leftBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    UIButton  *leftBtnClose = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtnClose setTitle:@"关闭" forState:UIControlStateNormal];
-    [leftBtnClose addTarget:self action:@selector(setLeftBack:) forControlEvents:UIControlEventTouchUpInside];
-    leftBtnClose.frame = CGRectMake(54, 0, 44, 44);
-    [leftBtnClose setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    //将leftItem设置为自定义按钮
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 98, 40)];
     [view addSubview:leftBtn];
-    [view addSubview:leftBtnClose];
-    UIBarButtonItem  *leftItem =[[UIBarButtonItem alloc]initWithCustomView: view];
-    self.navigationItem.leftBarButtonItem = leftItem;
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+
+    if (self.closeMutableButton == NO) {
+        UIButton  *leftBtnClose = [UIButton buttonWithType:UIButtonTypeCustom];
+        [leftBtnClose setTitle:@"关闭" forState:UIControlStateNormal];
+        [leftBtnClose addTarget:self action:@selector(setLeftBack:) forControlEvents:UIControlEventTouchUpInside];
+        leftBtnClose.frame = CGRectMake(54, 0, 44, 44);
+        [leftBtnClose setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [view addSubview:leftBtnClose];
+    }
 }
 #pragma mark - Button Action
 - (void)setDefaultLeftBack:(UIButton *)sender
@@ -136,11 +147,13 @@
 }
 #pragma mark - WKScriptMessageHandler
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
-    for (NSString *interface in self.jsInterfaces) {
-        //这里可以通过name处理多组交互
-        if ([message.name isEqualToString:interface] && [self.delegate respondsToSelector:@selector(htmlRequrieToIOS:andData:andBaseInterfaces:)]) {
-            //body只支持NSNumber, NSString, NSDate, NSArray,NSDictionary 和 NSNull类型
-            [self.delegate htmlRequrieToIOS:message.name andData:message.body andBaseInterfaces:self.jsInterfaces];
+    if ([self.delegate respondsToSelector:@selector(htmlRequrieToIOS:andData:andBaseInterfaces:)]) {
+        for (NSString *interface in self.jsInterfaces) {
+            //这里可以通过name处理多组交互
+            if ([message.name isEqualToString:interface]) {
+                //body只支持NSNumber, NSString, NSDate, NSArray,NSDictionary 和 NSNull类型
+                [self.delegate htmlRequrieToIOS:message.name andData:message.body andBaseInterfaces:self.jsInterfaces];
+            }
         }
     }
 }
