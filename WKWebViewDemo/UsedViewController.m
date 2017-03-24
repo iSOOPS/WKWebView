@@ -18,6 +18,11 @@
     self.url_string = @"http://www.taobao.com";
     
     [super viewDidLoad];
+    
+    
+    [self sendFuntionToJavaScript:@"" block:^(id response) {
+        ;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -33,24 +33,13 @@
         [self addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
         [self addObserver:self forKeyPath:@"canGoBack" options:NSKeyValueObservingOptionNew context:NULL];
         self.UIDelegate=self;
+ 
         self.allowsBackForwardNavigationGestures=YES;
         self.opaque = NO;
     }
     _url_string = url_string;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:_url_string]];
     [self loadRequest:request];
-}
-
-
-#pragma mark - WKNavigationDelegate
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
-    NSLog(@"~~~~~%@",navigationAction);
-    decisionHandler(WKNavigationActionPolicyAllow);
-}
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-    NSLog(@"!!!!!!%@",navigationResponse);
-    decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{

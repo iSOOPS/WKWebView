@@ -12,7 +12,7 @@
 #import "NJKWebViewProgress.h"
 #import "NJKWebViewProgressView.h"
 
-@interface SWKWebViewController ()<SWKWebViewDelegate,WKScriptMessageHandler>
+@interface SWKWebViewController ()<SWKWebViewDelegate,WKScriptMessageHandler,WKNavigationDelegate>
 
 @property(nonatomic ,strong)NJKWebViewProgressView *progressView;
 
@@ -69,6 +69,7 @@
         self.webView = [[SWKWebView alloc]init];
     }
     self.webView.url_string = self.url_string;
+    self.webView.navigationDelegate = self;
     [self.view addSubview:self.webView];
     self.webView.delegate = self;
 }
@@ -108,6 +109,34 @@
         [view addSubview:leftBtnClose];
     }
 }
+
+#pragma mark - WKNavigationDelegate
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    // 在发送请求之前，决定是否跳转
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+    // 在收到响应后，决定是否跳转
+    decisionHandler(WKNavigationResponsePolicyAllow);
+}
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation;{
+    // 接收到服务器跳转请求之后调用
+    
+}
+
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation;{
+    // 页面开始加载时调用
+}
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation;{
+    // 当内容开始返回时调用
+}
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation;{
+    // 页面加载完成之后调用
+}
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation;{
+    // 页面加载失败时调用
+}
+
 #pragma mark - Button Action
 - (void)setDefaultLeftBack:(UIButton *)sender
 {
@@ -156,5 +185,12 @@
             }
         }
     }
+}
+- (void)sendFuntionToJavaScript:(NSString*)script block:(void(^)(id response))result;
+{
+    [self.webView evaluateJavaScript:script
+                   completionHandler:^(id _Nullable response, NSError * _Nullable error) {
+                       result(result);
+                   }];
 }
 @end

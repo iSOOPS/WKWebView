@@ -16,45 +16,32 @@
 
 @interface SWKWebViewController : UIViewController
 
-/**
- url加载
- */
+/** url加载 */
 @property(nonatomic ,strong)NSString* url_string;
-
-/**
- wkWebView
- */
+/** wkWebView */
 @property (nonatomic,strong)SWKWebView *webView;
-
-/**
- js回调接口名
- */
+/** 是否关闭进度条 */
+@property(nonatomic )BOOL closeProgressBar;
+/** 是否关闭2级按钮 */
+@property(nonatomic )BOOL closeMutableButton;
+/** js回调接口名 */
 @property(nonatomic ,strong)NSMutableArray<NSString*>* jsInterfaces;
-
-/**
- 代理模式
- */
+/** 代理模式 */
 @property(nonatomic ,assign)id<SWKWebViewControllerDelegate> delegate;
 
+/**
+ OC 调用js funtion
+ */
+- (void)sendFuntionToJavaScript:(NSString*)script block:(void(^)(id response))result;
 /**
  用于重写js接口回调内容
  */
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message;
-
 /**
  用于重写navtionBar上的UI
  */
 - (void)initNavgationItem;
 
-/**
- 是否关闭进度条
- */
-@property(nonatomic )BOOL closeProgressBar;
-
-/**
- 是否关闭2级按钮
- */
-@property(nonatomic )BOOL closeMutableButton;
 
 
 @end
